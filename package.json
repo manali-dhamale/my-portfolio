@@ -4,8 +4,8 @@
   "description": "Manali Dhamale's Portfolio Website - Front-end Developer & Data Analyst",
   "main": "index.html",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "start": "python3 -m http.server 8000"
+    "start": "serve",
+    "build": "echo 'No build step required'"
   },
   "keywords": [
     "portfolio",
