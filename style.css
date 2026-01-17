@@ -1466,45 +1466,68 @@ img {
 
 
 /* --- MOBILE RESPONSIVENESS (Corrected & Moved to End) --- */
+/* --- MOBILE RESPONSIVENESS (Refined & Perfected) --- */
 @media (max-width: 884px) {
     body {
         overflow-y: visible;
         overflow-x: hidden;
-        /* Ensure no horizontal scroll */
+        /* Prevent horizontal scroll */
         width: 100%;
+        /* Change gradient to vertical for better mobile look */
+        background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(254, 215, 173));
     }
 
-    /* FIX: Flex navigation instead of absolute */
-    .nav-container {
+    /* Fixed Nav Bar */
+    nav {
+        display: flex;
+        align-items: center;
         justify-content: space-between;
-        /* Push logo left, hamburger right */
         padding: 0 20px;
+        /* Ensure padding on sides */
+    }
+
+    .nav-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
     }
 
     nav .logo {
-        position: static;
-        /* Reset absolute positioning */
-        font-size: 1.2rem;
-        transform: none;
-        /* Reset any transforms */
+        position: relative;
+        /* Ensure it's not absolute */
+        font-size: 1.4rem;
+        z-index: 1001;
+        /* Above everything */
+        display: block !important;
+        /* Force visible */
+        left: auto;
+        top: auto;
+        /* Reset desktop positioning */
     }
 
     .nav-container .links {
         display: none;
     }
 
+    /* Sections */
     section {
-        padding: 80px 5%;
+        display: block;
+        /* Remove flex centering to avoid cut-off */
+        padding: 100px 5% 40px;
+        /* Top padding for fixed nav */
         min-height: auto;
+        height: auto;
     }
 
     /* Hero Section */
     .main-container {
         display: flex;
         flex-direction: column;
-        /* Image on top */
-        padding: 20px 10px;
         align-items: center;
+        width: 100%;
+        padding: 0;
     }
 
     .main-container .image {
@@ -1512,79 +1535,86 @@ img {
         margin-bottom: 30px;
         display: flex;
         justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
-    /* FIX: Image fram sizing */
+    /* Perfect Image Frame Sizing */
     .img-frame {
         width: 280px !important;
         height: 280px !important;
-        margin: 0 auto;
-        max-width: 80vw;
-        /* Responsive cap */
-        /* Ensure border fits */
-        box-sizing: border-box;
+        margin: 0 auto !important;
+        /* Force center */
+        max-width: 70vw;
+        /* Slightly smaller to ensure breathing room */
+        border: 4px solid white;
+        box-shadow: 0 0 20px 5px rgba(109, 67, 0, 0.4);
     }
 
     .main-container .content {
         width: 100%;
-        padding: 10px;
         text-align: center;
-        /* Center text on mobile usually looks better */
+        padding: 0 10px;
     }
 
     .content h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 10px;
     }
 
     .content .typewriter {
-        font-size: 1.2rem;
-        justify-content: center;
-        /* Helper for centering if flex */
+        font-size: 1.3rem;
         display: flex;
-        /* Ensure centering works */
+        justify-content: center;
+        margin-bottom: 15px;
     }
 
     .content .typewriter span {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .content p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         line-height: 1.6;
-        text-align: center;
-        /* Ensure readability */
+        margin-bottom: 20px;
     }
 
     .social-links {
-        justify-content: center;
-        /* Center social icons */
         display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
     }
 
     .social-links i {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1.2rem;
-        margin: 5px;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.4rem;
+        margin: 0;
     }
 
     .content button {
-        width: 80%;
-        height: 50px;
-        font-size: 1rem;
-        margin: 20px auto;
-        /* Center button */
+        width: 100%;
+        max-width: 300px;
+        height: 55px;
+        font-size: 1.1rem;
+        margin: 0 auto;
         display: block;
     }
 
-    /* Show hamburger and cancel on mobile */
+    /* Hamburger Menu Positioning */
     .hamburg,
     .cancel {
         display: block !important;
+        position: relative;
+        right: auto;
+        top: auto;
+        /* Reset absolute */
+        font-size: 1.8rem;
     }
 
-
-    /* Dashboard mobile */
+    /* Grid Layouts - Single Column */
     .dashboard-grid,
     .skills-grid,
     .cert-grid,
@@ -1592,9 +1622,8 @@ img {
     .internship-grid,
     .about-grid {
         grid-template-columns: 1fr !important;
-        /* Force single column */
-        gap: 20px;
-        padding: 0 5px;
+        gap: 25px;
+        padding: 0;
     }
 
     .hub-card,
@@ -1604,22 +1633,16 @@ img {
     .internship-card,
     .about-card,
     .objective-card {
-        padding: 20px;
-        margin-bottom: 15px;
+        padding: 25px 20px;
     }
 
     .intern-img {
-        height: 220px;
+        height: auto;
+        min-height: 200px;
     }
 
     .about-socials {
         flex-direction: column;
-        gap: 15px;
         align-items: center;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
     }
 }
